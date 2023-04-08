@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="GoToCart">Go To Cart</string>
+    <string name="total_item_in_cart_is_10">Total Item in cart is 10</string>
+    <string name="total_cost_20000">Total Cost : 20000</string>
+    <string name="signup">SignUp</string>
+    <string name="signin">SignIn</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="otp">OTP</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="user_name">User Name</string>
+    <string name="village">Village</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+    <string name="product_name">Product Name</string>
+    <string name="price_1200rs">Price : 1200rs</string>
+</resources>
