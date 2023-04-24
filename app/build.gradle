@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.demoecommerce"
-        minSdk 21
+        minSdk 22
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -46,7 +46,7 @@ dependencies {
     def nav_version = "2.5.3"
     def room_version = "2.5.1"
 
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -60,7 +60,7 @@ dependencies {
 
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
-    implementation platform('com.google.firebase:firebase-bom:31.3.0')
+    implementation platform('com.google.firebase:firebase-bom:31.5.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-storage-ktx'
@@ -69,7 +69,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.15.1'
     implementation 'com.google.firebase:firebase-firestore-ktx'
 
-    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
 
     implementation("androidx.room:room-runtime:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
@@ -78,4 +78,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.0-Beta")
 
     implementation 'com.razorpay:checkout:1.6.26'
+
+    implementation 'com.google.android.play:integrity:1.1.0'
 }

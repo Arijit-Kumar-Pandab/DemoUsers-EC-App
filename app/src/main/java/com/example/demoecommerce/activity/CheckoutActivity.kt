@@ -35,7 +35,7 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
             options.put("theme.color", "#FF018786")
             options.put("currency", "INR")
             options.put("amount", (price!!.toInt()*100)) //pass amount in currency subunits
-            options.put("prefill.email", "arijitkumarpandab.com")
+            options.put("prefill.email", "arijitkumarpandab@gmail.com")
             options.put("prefill.contact", "9078151820")
             checkout.open(this, options)
         } catch (e: Exception) {
