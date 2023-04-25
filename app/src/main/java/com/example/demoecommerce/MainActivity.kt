@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         init()
-
         setContentView(binding.root)
 
         if (FirebaseAuth.getInstance().currentUser == null)  {
@@ -43,22 +42,8 @@ class MainActivity : AppCompatActivity() {
                 2 -> i = 2
             }
         }
+//        finishAffinity()
 
-
-
-//        navController.addOnDestinationChangedListener(object : NavController.OnDestinationChangedListener{
-//            override fun onDestinationChanged(
-//                controller: NavController,
-//                destination: NavDestination,
-//                arguments: Bundle?
-//            ) {
-//                title = when(destination.id){
-//                    R.id.cartFragment -> "My Cart"
-//                    R.id.moreFragment -> "My Dashboard"
-//                    else -> "P-Kart"
-//                }
-//            }
-//        })
     }
 
     override fun onBackPressed() {

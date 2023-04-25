@@ -20,4 +20,5 @@
     <string name="proceed_to_checkout">Proceed to Checkout</string>
     <string name="product_name">Product Name</string>
     <string name="price_1200rs">Price : 1200rs</string>
+    <string name="log_out">Log out</string>
 </resources>

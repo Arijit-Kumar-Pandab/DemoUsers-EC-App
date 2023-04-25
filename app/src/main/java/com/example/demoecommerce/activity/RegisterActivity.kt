@@ -25,6 +25,8 @@ class RegisterActivity : AppCompatActivity() {
         binding.signUpButton.setOnClickListener {
             validateUser()
         }
+
+//        finishAffinity()
     }
 
     private fun validateUser() {

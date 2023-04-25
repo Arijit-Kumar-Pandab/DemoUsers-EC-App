@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
         getSliderImage()
         getProducts()
 
+
         return binding.root
     }
 

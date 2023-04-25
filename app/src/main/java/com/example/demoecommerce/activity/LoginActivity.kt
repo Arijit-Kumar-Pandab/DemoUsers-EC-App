@@ -41,10 +41,11 @@ class LoginActivity : AppCompatActivity() {
                 sendOtp(binding.userNumberInput.text.toString())
             }
         }
+
+//        finishAffinity()
     }
 
     private fun init() {
-
         auth = FirebaseAuth.getInstance()
     }
 
@@ -73,6 +74,7 @@ class LoginActivity : AppCompatActivity() {
             .setCancelable(false)
             .create()
         builder.show()
+
         val options = PhoneAuthOptions.newBuilder(auth)
             .setPhoneNumber("+91$number")       // Phone number to verify
             .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit

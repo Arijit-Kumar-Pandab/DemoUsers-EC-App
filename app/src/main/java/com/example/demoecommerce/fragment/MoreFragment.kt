@@ -12,9 +12,11 @@ import com.example.demoecommerce.activity.LoginActivity
 import com.example.demoecommerce.adapter.AllOrderAdapter
 import com.example.demoecommerce.databinding.FragmentMoreBinding
 import com.example.demoecommerce.model.AllOrderModel
+import com.example.demoecommerce.model.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 class MoreFragment : Fragment() {
@@ -32,6 +34,15 @@ class MoreFragment : Fragment() {
         list = ArrayList()
 
         val preferences = requireContext().getSharedPreferences("user", AppCompatActivity.MODE_PRIVATE)
+        Firebase.firestore.collection("users")
+            .whereEqualTo("userPhoneNumber", preferences.getString("number", ""))
+            .get().addOnSuccessListener {
+                 for (doc in it) {
+                     val data = doc.toObject(UserModel::class.java)
+                     binding.nameText.setText(data.userName)
+                 }
+            }
+
         Firebase.firestore.collection("allOrders")
             .whereEqualTo("userId", preferences.getString("number", "")!!)
             .get().addOnSuccessListener {
@@ -43,10 +54,9 @@ class MoreFragment : Fragment() {
             binding.recyclerView.adapter = AllOrderAdapter(list, requireContext())
         }
 
-        binding.floatingActionButton.setOnClickListener {
+        binding.signOutBtn.setOnClickListener {
             Firebase.auth.signOut()
             startActivity(Intent(requireContext(), LoginActivity::class.java))
-
         }
         return binding.root
     }

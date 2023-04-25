@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.demoecommerce.MainActivity
 import com.example.demoecommerce.R
 import com.example.demoecommerce.databinding.ActivityOtpactivityBinding
@@ -108,14 +109,23 @@ class OTPActivity : AppCompatActivity() {
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+        val builder = AlertDialog.Builder(this)
+            .setTitle("Loading....")
+            .setMessage("Please Wait")
+            .setCancelable(false)
+            .create()
+        builder.show()
+
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
+                    builder.dismiss()
                     Toast.makeText(this, "Authenticate Successfully!", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, MainActivity::class.java))
                 } else {
                     // Sign in failed, display a message and update the UI
+                    builder.dismiss()
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         // The verification code entered was invalid
                     }
